@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '2.0.4'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'cn.hutool', name: 'hutool-all', version: "5.7.22"
+//    implementation group: 'org.apache.commons', name: 'commons-lang3', version: "3.12.0"
+//    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+//    implementation group: 'org.apache.commons', name: 'commons-lang3', version: "3.12.0"
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+//    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+//    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.6.4'
+    implementation group: 'log4j', name: 'log4j', version: '1.2.16'
+//    testImplementation group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.25'
+    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.4'
+
+//    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+
+//    implementation group: 'org.apache.spark', name: 'spark-core_2.11', version: "2.4.0-cdh6.3.0"
+// https://mvnrepository.com/artifact/com.jcraft/jsch
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.54'
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+//    testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task 'create-dirs' {
+    doLast {
+        sourceSets*.java.srcDirs*.each {
+            it.mkdirs()
+        }
+        sourceSets*.resources.srcDirs*.each {
+            it.mkdirs()
+        }
+    }
+}
+
+shadowJar {
+//        baseName = 'flinkEngine'
+    relocate 'com.google', 'shade.com.google'
+    dependencies {
+    }
+    zip64 true
+}
