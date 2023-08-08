@@ -1,6 +1,9 @@
 package fujian;
 
 import cn.hutool.core.util.StrUtil;
+
+import cn.hutool.cron.CronUtil;
+import cn.hutool.cron.task.Task;
 import cn.hutool.setting.Setting;
 import com.jcraft.jsch.SftpException;
 import org.slf4j.Logger;
@@ -9,10 +12,17 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import static fujian.SFTPUtil.load_Setting;
 
 
 public class SyncFiles {
+
+    private static String cur_time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
     static final Logger log = LoggerFactory.getLogger(SyncFiles.class);
 
@@ -26,26 +36,7 @@ public class SyncFiles {
 //    }
 
 
-    public static SFTPUtil load_Setting(Setting setting){
 
-        log.debug("load_Setting");
-
-        String username = setting.get("sftp", "username");
-        String password = setting.get("sftp", "password");
-        String host = setting.get("sftp", "host");
-        Integer port = setting.getInt("port", "sftp");
-//        System.out.println("post = " + port);
-//        System.out.println("host = " + host);
-//        System.out.println("password = " + password);
-//        System.out.println("username = " + username);
-//        System.out.println("setting = " + setting);
-        if (StrUtil.isBlank(username) || StrUtil.isBlank(password) || StrUtil.isBlank(host) ){
-            log.debug("SFTP 参数缺失");
-            return  null;
-        }
-        return new SFTPUtil(username, password, host, port);
-
-    }
 
 
     public static void main(String[] args) throws SftpException {

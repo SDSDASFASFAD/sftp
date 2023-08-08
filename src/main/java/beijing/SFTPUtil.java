@@ -82,6 +82,8 @@ public class SFTPUtil {
                 session.disconnect();
             }
         }
+
+        log.info("SFTP DISCONNECTION ");
     }
 
     public ArrayList<File> listFiles(String dir,String target_time) throws SftpException {

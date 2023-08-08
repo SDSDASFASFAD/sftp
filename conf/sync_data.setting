@@ -1,0 +1,13 @@
+[sftp]
+username = sftp
+password = sftp
+host = 192.168.122.1
+port = 22
+
+[target_dir]
+target_dir = /data/sino/share/data
+
+[offline]
+/lott_all/wininfo = 20:00:00
+
+

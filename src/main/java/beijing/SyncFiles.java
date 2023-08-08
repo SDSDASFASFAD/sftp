@@ -56,7 +56,7 @@ public class SyncFiles {
 
         if(sftp != null) {
 
-            sftp.login();
+
 
             String[] source_dirs = StrUtil.splitToArray(setting.get("sync", "source_dir"), ",");
 
@@ -73,7 +73,11 @@ public class SyncFiles {
                 }else {
                     while (true){
 
+                        sftp.login();
+
                         extracted(target_time, sftp, source_dirs, target_dir);
+
+                        sftp.logout();
 
                         Thread.sleep(TimeUnit.MINUTES.toMillis(1));
                     }

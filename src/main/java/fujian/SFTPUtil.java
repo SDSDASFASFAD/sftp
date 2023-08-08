@@ -5,6 +5,7 @@ import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.setting.Setting;
 import com.jcraft.jsch.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,23 @@ public class SFTPUtil {
         this.password = password;
         this.host = host;
         this.port = port;
+    }
+
+    public static SFTPUtil load_Setting(Setting setting){
+
+        log.debug("load_Setting");
+
+        String username = setting.get("sftp", "username");
+        String password = setting.get("sftp", "password");
+        String host = setting.get("sftp", "host");
+        Integer port = setting.getInt("port", "sftp");
+
+        if (StrUtil.isBlank(username) || StrUtil.isBlank(password) || StrUtil.isBlank(host) ){
+            log.debug("SFTP 参数缺失");
+            return  null;
+        }
+        return new SFTPUtil(username, password, host, port);
+
     }
 
 
