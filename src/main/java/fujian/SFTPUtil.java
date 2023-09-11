@@ -53,7 +53,7 @@ public class SFTPUtil {
         Integer port = setting.getInt("port", "sftp");
 
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password) || StrUtil.isBlank(host) ){
-            log.debug("SFTP 参数缺失");
+            log.error("SFTP 参数缺失");
             return  null;
         }
         return new SFTPUtil(username, password, host, port);
@@ -79,14 +79,14 @@ public class SFTPUtil {
 
             session.setConfig(config);
             session.connect();
-            log.info("SFTP CONNECTION SUCCESSFUL");
+            log.debug("SFTP CONNECTION SUCCESSFUL");
 
             Channel channel = session.openChannel("sftp");
             channel.connect();
 
             sftp = (ChannelSftp) channel;
         } catch (JSchException e) {
-            log.info("SFTP CONNECTION FAILED");
+            log.error("SFTP CONNECTION FAILED");
             e.printStackTrace();
         }
     }
@@ -106,25 +106,12 @@ public class SFTPUtil {
     }
 
     public ArrayList<File> listFiles(String dir,String date) throws SftpException {
-//        ArrayList<String> files = new ArrayList<String>();
-//        sftp.cd(dir);
-//        Vector<String> lss = sftp.ls("*");
-//        for (int i = 0; i < lss.size(); i++) {
-//            Object obj = lss.elementAt(i);
-//            if (obj instanceof com.jcraft.jsch.ChannelSftp.LsEntry) {
-//                ChannelSftp.LsEntry entry = (ChannelSftp.LsEntry) obj;
-//                if (!entry.getAttrs().isDir()) {
-//                    files.add(entry.getFilename());
-//                }
-//
-//            }
-//        }
 
         ArrayList<File> files = new ArrayList<>();
 
         sftp.cd(dir);
 //        System.out.println("进入目录"+dir);
-        log.info(" cd : "+dir);
+        log.debug(" cd : "+dir);
 
         Vector<String> file_list = sftp.ls("*");
 
@@ -136,7 +123,7 @@ public class SFTPUtil {
             target_date = date.trim();
         }
 
-        log.info(" target Date ："+ target_date);
+        log.debug(" target Date ："+ target_date);
 
         log.debug("获取 "+dir+" 下日期为 "+target_date+ "的数据");
 
@@ -176,7 +163,7 @@ public class SFTPUtil {
 
             if (file_date.equals(target_date)){
                 files.add(file);
-                log.info("add file : "+ file.getName());
+                log.debug("add file : "+ file.getName());
             }
 
 

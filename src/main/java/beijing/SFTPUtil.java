@@ -106,37 +106,38 @@ public class SFTPUtil {
 
         String last_time = "2023-01-01 00:00:00";
 
-        for (int i = 0; i < file_list.size(); i++) {
+        try {
+            for (int i = 0; i < file_list.size(); i++) {
 
-            Object obj = file_list.elementAt(i);
-            String file_name = null;
+                Object obj = file_list.elementAt(i);
+                String file_name = null;
 
-            if (obj instanceof ChannelSftp.LsEntry) {
-                ChannelSftp.LsEntry entry = (ChannelSftp.LsEntry) obj;
-                 file_name = entry.getFilename();
-            }
+                if (obj instanceof ChannelSftp.LsEntry) {
+                    ChannelSftp.LsEntry entry = (ChannelSftp.LsEntry) obj;
+                    file_name = entry.getFilename();
+                }
 //            System.out.println(file_name);
-            File file = new File(new File(dir),file_name);
+                File file = new File(new File(dir),file_name);
 //            System.out.println(file.getAbsolutePath());
-            SftpATTRS file_state = sftp.lstat(file.getAbsolutePath());
+                SftpATTRS file_state = sftp.lstat(file.getAbsolutePath());
 //            log.debug(file.getAbsolutePath());
 //            log.info(file_state.getMtimeString());
-            // Mon Feb 20 09:50:01 CST 2023    CST时间格式
+                // Mon Feb 20 09:50:01 CST 2023    CST时间格式
 
-            SimpleDateFormat sim1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);
-            SimpleDateFormat sim2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                SimpleDateFormat sim1 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);
+                SimpleDateFormat sim2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-            String file_date = null;
-            try {
-                // getAtimeString() : 返回访问时间的字符串表示形式。
-                // getMtimeString() : 返回修改时间的字符串表示形式。
-                file_date = sim2.format(sim1.parse(file_state.getMtimeString()));
+                String file_date = null;
+                try {
+                    // getAtimeString() : 返回访问时间的字符串表示形式。
+                    // getMtimeString() : 返回修改时间的字符串表示形式。
+                    file_date = sim2.format(sim1.parse(file_state.getMtimeString()));
 //                log.debug(file_date);
 
-            } catch (ParseException e) {
-                log.error("PARSE CST ERROR");
-                e.printStackTrace();
-            }
+                } catch (ParseException e) {
+                    log.error("PARSE CST ERROR");
+                    e.printStackTrace();
+                }
 
 //            log.info( file_state.getMtimeString()+ " 日期  "+ file_date +"  文件名 " + file_name);
 
@@ -146,19 +147,24 @@ public class SFTPUtil {
 //            }
 
 
-            DateTime start_time = DateUtil.parseDateTime(target_time);
-            DateTime filedate = DateUtil.parseDateTime(file_date);
+                DateTime start_time = DateUtil.parseDateTime(target_time);
+                DateTime filedate = DateUtil.parseDateTime(file_date);
 //            DateTime end_time = DateUtil.offsetMinute(start_time,-5);
-            long date_sub = DateUtil.between(start_time, filedate, MINUTE, false);
-            if (date_sub > 0 ){
-                files.add(file);
-                log.info("add file : "+ file.getName());
+                long date_sub = DateUtil.between(start_time, filedate, MINUTE, false);
+                if (date_sub > 0 ){
+                    files.add(file);
+                    log.info("add file : "+ file.getName());
+                }
+
+                last_time = DateUtil.between(DateUtil.parseDateTime(last_time), filedate, SECOND, false) >0 ? file_date : last_time;
+
+
             }
 
-            last_time = DateUtil.between(DateUtil.parseDateTime(last_time), filedate, SECOND, false) >0 ? file_date : last_time;
-
-
+        }catch (Exception e ){
+            e.printStackTrace();
         }
+
 
         SyncFiles.target_time = last_time;
 

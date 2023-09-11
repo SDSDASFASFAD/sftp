@@ -4,10 +4,20 @@ password = sftp
 host = 192.168.122.1
 port = 22
 
+[mysql]
+url=jdbc:mysql://192.168.200.81:3306/bwljh
+username=root
+password=root
+driver=com.mysql.cj.jdbc.Driver
+
 [target_dir]
 target_dir = /data/sino/share/data
 
 [offline]
+/lott_all/wininfo = 06:00:00
+/lott_all/allticketdata = 06:10:00
+/lott_all/termsum = 06:15:00
 /lott_all/wininfo = 20:00:00
+/lott_all/term = 23:59:00
 
 
