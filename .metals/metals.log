@@ -1,0 +1,95 @@
+2026.03.14 10:58:33 INFO  Started: Metals version 1.6.6 in folders 'E:\IDEA_PROJECT\sftp' for client Trae CN 1.107.1.
+2026.03.14 10:58:33 INFO  Memory monitor started
+2026.03.14 10:58:34 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.03.14 10:58:34 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 10:58:35 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 10:58:39 WARN  no build target for: E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java
+2026.03.14 10:58:39 WARN  no build target for: E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java
+2026.03.14 10:58:39 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java:115: 错误: 编码 GBK 的不可映射字符 (0xB6)
+//                        log.error(source_dir + "涓嬫病鏈夊綋鍓嶆棩鏈熸枃浠? 锛?" + target_date);
+                                                               ^
+E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java:115: 错误: 编码 GBK 的不可映射字符 (0x9A)
+//                        log.error(source_dir + "涓嬫病鏈夊綋鍓嶆棩鏈熸枃浠? 锛?" + target_date);
+                                                                  ^
+2026.03.14 10:58:39 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 10:58:45 WARN  no build target for: E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java
+2026.03.14 10:58:45 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:38 WARN  no build target for: E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java
+2026.03.14 11:00:38 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:38 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:38 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+3月 14, 2026 11:00:39 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27
+2026.03.14 11:00:38 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:38 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+3月 14, 2026 11:00:39 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 31
+2026.03.14 11:00:41 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:41 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:42 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:47 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:47 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+3月 14, 2026 11:00:47 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 39
+2026.03.14 11:00:47 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:47 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:47 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:47 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:00:47 INFO  empty definition using pc, found symbol in pc: _empty_/SftpException# (full report at: "E:\IDEA_PROJECT\sftp\.metals\.reports\metals-full\2026-03-14\r_empty-definition_11-00-47-439.md")
+2026.03.14 11:00:47 INFO  Created report: Optional[file:///E:/IDEA_PROJECT/sftp/src/main/java/beijing/SyncFiles.java]
+2026.03.14 11:00:47 INFO  empty definition using pc, found symbol in pc: _empty_/SftpException# (full report at: "E:\IDEA_PROJECT\sftp\.metals\.reports\metals-full\2026-03-14\r_empty-definition_11-00-47-439.md")
+2026.03.14 11:01:01 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+3月 14, 2026 11:02:10 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+2026.03.14 11:02:34 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:04:52 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+3月 14, 2026 11:05:07 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+3月 14, 2026 11:06:43 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+3月 14, 2026 11:07:10 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+3月 14, 2026 11:07:21 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+2026.03.14 11:07:25 INFO  Shutting down server
+2026.03.14 11:07:25 INFO  Memory monitor stopped
+2026.03.14 11:07:25 INFO  shutting down Metals
+2026.03.14 11:07:25 INFO  Exiting server
+2026.03.14 11:21:07 INFO  Started: Metals version 1.6.6 in folders 'E:\IDEA_PROJECT\sftp' for client Trae CN 1.107.1.
+2026.03.14 11:21:07 INFO  Memory monitor started
+2026.03.14 11:21:09 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.03.14 11:21:09 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:21:10 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:21:10 INFO  skipping build import with status 'Dismissed'
+2026.03.14 11:21:11 WARN  no build target for: E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java
+2026.03.14 11:21:11 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java:115: 错误: 编码 GBK 的不可映射字符 (0xB6)
+//                        log.error(source_dir + "涓嬫病鏈夊綋鍓嶆棩鏈熸枃浠? 锛?" + target_date);
+                                                               ^
+E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java:115: 错误: 编码 GBK 的不可映射字符 (0x9A)
+//                        log.error(source_dir + "涓嬫病鏈夊綋鍓嶆棩鏈熸枃浠? 锛?" + target_date);
+                                                                  ^
+2026.03.14 11:21:12 INFO  time: code lens generation in 1.74s
+3月 14, 2026 11:22:11 上午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+2026.03.14 11:22:33 WARN  no build target for: E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java
+2026.03.14 11:22:33 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:23:02 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:23:02 INFO  no build target found for E:\IDEA_PROJECT\sftp\src\main\java\beijing\SyncFiles.java. Using fallback presentation compiler.
+2026.03.14 11:24:13 INFO  Shutting down server
+2026.03.14 11:24:13 INFO  Memory monitor stopped
+2026.03.14 11:24:13 INFO  shutting down Metals
+2026.03.14 11:24:13 INFO  Exiting server
+2026.03.16 23:34:05 INFO  Started: Metals version 1.6.6 in folders 'E:\IDEA_PROJECT\sftp' for client Trae CN 1.107.1.
+2026.03.16 23:34:05 INFO  Memory monitor started
+2026.03.16 23:34:07 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.03.16 23:34:07 INFO  skipping build import with status 'Dismissed'
+3月 16, 2026 11:34:15 下午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+3月 16, 2026 11:34:17 下午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+2026.03.16 23:34:56 INFO  Shutting down server
+2026.03.16 23:34:56 INFO  Memory monitor stopped
+2026.03.16 23:34:56 INFO  shutting down Metals
+2026.03.16 23:34:56 INFO  Exiting server
