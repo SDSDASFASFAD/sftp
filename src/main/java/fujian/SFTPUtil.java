@@ -45,7 +45,7 @@ public class SFTPUtil {
 
     public static SFTPUtil load_Setting(Setting setting){
 
-        log.debug("load_Setting");
+        log.debug("load setting");
 
         String username = setting.get("sftp", "username");
         String password = setting.get("sftp", "password");
@@ -76,17 +76,19 @@ public class SFTPUtil {
             }
             Properties config = new Properties();
             config.put("StrictHostKeyChecking", "no");
+            config.put("userauth.gssapi-with-mic", "no");
+            //设置StrictHostKeyChecking 代表公钥检查机制，为no表示最不安全的级别（比如不提示一些安全警告）
 
             session.setConfig(config);
             session.connect();
-            log.debug("SFTP CONNECTION SUCCESSFUL");
+//            log.debug("sftp connection successful");
 
             Channel channel = session.openChannel("sftp");
             channel.connect();
 
             sftp = (ChannelSftp) channel;
         } catch (JSchException e) {
-            log.error("SFTP CONNECTION FAILED");
+            log.error("sftp connection failed");
             e.printStackTrace();
         }
     }
@@ -123,7 +125,7 @@ public class SFTPUtil {
             target_date = date.trim();
         }
 
-        log.debug(" target Date ："+ target_date);
+        log.debug(" target date ："+ target_date);
 
         log.debug("获取 "+dir+" 下日期为 "+target_date+ "的数据");
 
@@ -155,7 +157,7 @@ public class SFTPUtil {
 //                log.debug(file_date);
 
             } catch (ParseException e) {
-                log.error("PARSE CST ERROR");
+                log.error("parse cst error");
                 e.printStackTrace();
             }
 
@@ -217,7 +219,7 @@ public class SFTPUtil {
 //        log.debug("start download");
             FileOutputStream out = new FileOutputStream(target_file);
             IoUtil.copy(is,out);
-            log.info("download successed :  " + file.getAbsolutePath() +"  to :"+ savedir );
+            log.info("download success :  " + file.getAbsolutePath() +"  to :"+ savedir );
             is.close();
             out.close();
         }else {

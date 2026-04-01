@@ -56,6 +56,8 @@ public class SftpMonitor {
 
            setting = new Setting(setting_path);
 
+           setting.autoLoad(true);
+
 //           System.out.println("Jar包所在目录：" + jarDirectory);
 
            System.out.println("" +
@@ -178,6 +180,7 @@ public class SftpMonitor {
                             .stream().map(entity -> entity.toBean(JSONObject.class).getString("cwl_name")).collect(Collectors.toList());
                     log.info("当日中奖信息：" + Arrays.toString(collect.toArray()));
                 } catch (SQLException throwables) {
+                    log.debug("MySQL 查询错误");
                     throwables.printStackTrace();
                 }
 

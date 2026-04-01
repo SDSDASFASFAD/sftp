@@ -23,21 +23,8 @@ public class SyncFiles {
     public static final Logger log = LoggerFactory.getLogger(SFTPUtil.class);
 
     public static SFTPUtil load_Setting(Setting setting){
-
-        String username = setting.get("sftp", "username");
-        String password = setting.get("sftp", "password");
-        String host = setting.get("sftp", "host");
-        Integer port = setting.getInt("port", "sftp");
-//        System.out.println("post = " + port);
-//        System.out.println("host = " + host);
-//        System.out.println("password = " + password);
-//        System.out.println("username = " + username);
-//        System.out.println("setting = " + setting);
-        if (StrUtil.isBlank(username) || StrUtil.isBlank(password) || StrUtil.isBlank(host) ){
-            log.debug("SFTP 参数缺失");
-            return  null;
-        }
-        return new SFTPUtil(username, password, host, port);
+        return null
+                ;
 
     }
 
